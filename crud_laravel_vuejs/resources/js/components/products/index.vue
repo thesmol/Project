@@ -27,7 +27,7 @@ import{ useRouter} from "vue-router"
     }
 
     const onEdit = (id) => {
-        router.push('/product/edit/' + id)
+        router.push('/product/edit/'+id)
     }
 
 

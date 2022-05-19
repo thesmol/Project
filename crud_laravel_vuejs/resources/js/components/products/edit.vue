@@ -75,11 +75,6 @@
             </div>
         </div>
 </div>
-    <!-- Footer Bar -->
-    <div class="dflex justify-content-between align-items-center my-3">
-        <p ></p>
-        <button class="btn btn-secondary" >Save</button>
-    </div>
 
     </div>
 </template>
