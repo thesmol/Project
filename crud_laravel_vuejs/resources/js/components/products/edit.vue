@@ -3,7 +3,9 @@
 import {onMounted, ref} from "vue"
 import {useRouter} from 'vue-router'
 
+
 const router = useRouter()
+   console.log('1. роутер' + router)
 
 let form = ref({
 
@@ -14,11 +16,15 @@ let form = ref({
     type:'',
     quantity:'',
     price:''
+ 
 })
+    console.log('2 form' + form)
+
 
 
 onMounted(async () => {
     getsingleProduct()
+    console.log('3 ' +'onmounted')
 })
 
 const props = defineProps({
@@ -27,15 +33,23 @@ const props = defineProps({
         default: ''
     }
 })
+    console.log(props)
 
 const getsingleProduct = async () =>{
     let response = await axios.get(`/api/get_edit_product/${props.id}`)
+    console.log('4 get product' + response)
     form.value = response.data.product
+    console.log(form.value + 'получить продукт')
 }
+
+const getProducts=async()=>{
+        let response = await axios.get("/api/get_all_product")
+        products.value = response.data.products
+        // console.log('products', products.value)
+    }
 
 
 const updateProduct = () =>{
-    
 
     const formData = new FormData()
     console.log(formData)
@@ -54,6 +68,7 @@ const updateProduct = () =>{
             form.value.type='',
             form.value.quantity='',
             form.value.price='',
+            console.log(response)
 
             router.push('/')
 
@@ -63,7 +78,7 @@ const updateProduct = () =>{
             })
         })
         .catch((error) => {
-            console.log('error')
+            console.log(error)
         })
 }
 
@@ -98,6 +113,11 @@ const updatePhoto=(e)=>{
     reader.readAsDataURL(file);
 }
 
+// getsingleProduct() 
+// updateProduct = () не обрабатывются
+
+
+ 
 
 
 </script>
