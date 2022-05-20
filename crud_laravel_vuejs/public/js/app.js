@@ -19807,33 +19807,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       };
     }();
 
-    var getProducts = /*#__PURE__*/function () {
-      var _ref4 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee3() {
-        var response;
-        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee3$(_context3) {
-          while (1) {
-            switch (_context3.prev = _context3.next) {
-              case 0:
-                _context3.next = 2;
-                return axios.get("/api/get_all_product");
-
-              case 2:
-                response = _context3.sent;
-                products.value = response.data.products; // console.log('products', products.value)
-
-              case 4:
-              case "end":
-                return _context3.stop();
-            }
-          }
-        }, _callee3);
-      }));
-
-      return function getProducts() {
-        return _ref4.apply(this, arguments);
-      };
-    }();
-
     var updateProduct = function updateProduct() {
       var formData = new FormData();
       console.log(formData);
@@ -19885,7 +19858,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
       reader.readAsDataURL(file);
     }; // getsingleProduct() 
-    // updateProduct = () не обрабатывются
+    // updateProduct = () не обрабатываются
 
 
     var __returned__ = {
@@ -19893,7 +19866,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       form: form,
       props: props,
       getsingleProduct: getsingleProduct,
-      getProducts: getProducts,
       updateProduct: updateProduct,
       getPhoto: getPhoto,
       updatePhoto: updatePhoto,

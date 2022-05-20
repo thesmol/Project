@@ -30,6 +30,8 @@ import{ useRouter} from "vue-router"
         router.push('/product/edit/'+id)
     }
 
+    
+
 
 
 </script>
