@@ -5,7 +5,7 @@ import {useRouter} from 'vue-router'
 
 
 const router = useRouter()
-   console.log('1. роутер' + router)
+
 
 let form = ref({
 
@@ -18,13 +18,13 @@ let form = ref({
     price:''
  
 })
-    console.log('2 form' + form)
+
 
 
 
 onMounted(async () => {
     getsingleProduct()
-    console.log('3 ' +'onmounted')
+
 })
 
 const props = defineProps({
@@ -33,9 +33,10 @@ const props = defineProps({
         default: ''
     }
 })
-    console.log(props)
+
 
 const getsingleProduct = async () =>{
+    console.log('4 get product start')
     let response = await axios.get(`/api/get_edit_product/${props.id}`)
     console.log('4 get product' + response)
     form.value = response.data.product

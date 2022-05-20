@@ -19753,7 +19753,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     expose();
     var props = __props;
     var router = (0,vue_router__WEBPACK_IMPORTED_MODULE_2__.useRouter)();
-    console.log('1. роутер' + router);
     var form = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)({
       id: '',
       name: '',
@@ -19763,23 +19762,20 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       quantity: '',
       price: ''
     });
-    console.log('2 form' + form);
     (0,vue__WEBPACK_IMPORTED_MODULE_1__.onMounted)( /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
       return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
               getsingleProduct();
-              console.log('3 ' + 'onmounted');
 
-            case 2:
+            case 1:
             case "end":
               return _context.stop();
           }
         }
       }, _callee);
     })));
-    console.log(props);
 
     var getsingleProduct = /*#__PURE__*/function () {
       var _ref3 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
@@ -19788,16 +19784,17 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
-                _context2.next = 2;
+                console.log('4 get product start');
+                _context2.next = 3;
                 return axios.get("/api/get_edit_product/".concat(props.id));
 
-              case 2:
+              case 3:
                 response = _context2.sent;
                 console.log('4 get product' + response);
                 form.value = response.data.product;
                 console.log(form.value + 'получить продукт');
 
-              case 6:
+              case 7:
               case "end":
                 return _context2.stop();
             }
