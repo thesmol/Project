@@ -14,8 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::create('target_destinations', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->bigIncrements('td_id');
+            $table->string('target');
+            $table->primary('td_id');
         });
     }
 

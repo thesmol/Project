@@ -14,8 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::create('la_fields', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->foreign('la_id')->references('la_id')->on('license_areas');
+            $table->foreign('f_id')->references('f_id')->on('fields');
+            $table->primary(array('la_id','f_id'));
         });
     }
 

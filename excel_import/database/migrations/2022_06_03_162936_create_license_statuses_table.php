@@ -14,8 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::create('license_statuses', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->bigIncrements('ls_id');
+            $table->string('status');
+            $table->primary('ls_ids');
         });
     }
 

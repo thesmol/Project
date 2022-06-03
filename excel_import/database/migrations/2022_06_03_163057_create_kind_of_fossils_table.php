@@ -14,8 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::create('kind_of_fossils', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->bigIncrements('kf_id');
+            $table->string('fossil');
+            $table->primary('kf_id');
         });
     }
 

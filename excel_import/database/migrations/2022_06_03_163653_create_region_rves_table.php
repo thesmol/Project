@@ -14,8 +14,12 @@ return new class extends Migration
     public function up()
     {
         Schema::create('region_rves', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->bigIncrements('rr_id');
+            $table->string('region_name');
+            $table->string('region_short_name');
+            $table->foreign('dr_id')->references('dr_id')->on('district_rves');
+            $table->primary('rr_id');
+
         });
     }
 

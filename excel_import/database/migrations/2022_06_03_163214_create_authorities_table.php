@@ -14,8 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::create('authorities', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->bigIncrements('a_id');
+            $table->string('authoritie');
+            $table->primary('a_id');
         });
     }
 

@@ -14,8 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::create('license_areas', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->bigIncrements('la_id');
+            $table->string('licanse_area_name');
+            $table->primary('la_id');
         });
     }
 

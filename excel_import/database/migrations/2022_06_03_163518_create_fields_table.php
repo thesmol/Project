@@ -14,8 +14,11 @@ return new class extends Migration
     public function up()
     {
         Schema::create('fields', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->bigIncrements('f_id');
+            $table->string('field_name');
+            $table->foreign('fe_id')->references('fe_id')->on('field_explorations');
+            $table->text('coords');
+            $table->primary('f_id');
         });
     }
 

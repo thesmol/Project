@@ -14,8 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::create('company_statuses', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->bigIncrements('cs_id');
+            $table->string('status');
+            $table->primary('cs_id');
         });
     }
 
