@@ -16,7 +16,8 @@ return new class extends Migration
         Schema::create('district_rves', function (Blueprint $table) {
             $table->bigIncrements('dr_id');
             $table->string('district');
-            $table->primary('dr_id');
+
+            // $table->primary('dr_id');
         });
     }
 

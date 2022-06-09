@@ -16,7 +16,8 @@ return new class extends Migration
         Schema::create('authorities', function (Blueprint $table) {
             $table->bigIncrements('a_id');
             $table->string('authoritie');
-            $table->primary('a_id');
+
+            // $table->primary('a_id');
         });
     }
 

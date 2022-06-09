@@ -14,9 +14,17 @@ return new class extends Migration
     public function up()
     {
         Schema::create('la_fields', function (Blueprint $table) {
-            $table->foreign('la_id')->references('la_id')->on('license_areas');
-            $table->foreign('f_id')->references('f_id')->on('fields');
-            $table->primary(array('la_id','f_id'));
+            $table->bigInteger('license_areas_id');
+            $table->foreign('license_areas_id')
+                ->references('la_id')->on('license_areas')
+                ->onDelete('cascade');
+
+            $table->bigInteger('fields_id');
+            $table->foreign('fields_id')
+                ->references('f_id')->on('fields')
+                ->onDelete('cascade');
+
+            // $table->primary(array('la_id','f_id'));
         });
     }
 

@@ -16,7 +16,8 @@ return new class extends Migration
         Schema::create('field_explorations', function (Blueprint $table) {
             $table->bigIncrements('fe_id');
             $table->string('exploration');
-            $table->primary('fe_id');
+
+            // $table->primary('fe_id');
         });
     }
 

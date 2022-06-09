@@ -16,7 +16,8 @@ return new class extends Migration
         Schema::create('license_statuses', function (Blueprint $table) {
             $table->bigIncrements('ls_id');
             $table->string('status');
-            $table->primary('ls_ids');
+
+            // $table->primary('ls_id');
         });
     }
 

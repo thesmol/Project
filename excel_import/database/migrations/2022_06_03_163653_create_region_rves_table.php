@@ -17,8 +17,10 @@ return new class extends Migration
             $table->bigIncrements('rr_id');
             $table->string('region_name');
             $table->string('region_short_name');
-            $table->foreign('dr_id')->references('dr_id')->on('district_rves');
-            $table->primary('rr_id');
+            $table->bigInteger('district_rves_id');
+            $table->foreign('district_rves_id')->references('dr_id')->on('district_rves')->onDelete('cascade');
+
+
 
         });
     }

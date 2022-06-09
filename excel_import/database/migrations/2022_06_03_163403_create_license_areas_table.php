@@ -16,7 +16,8 @@ return new class extends Migration
         Schema::create('license_areas', function (Blueprint $table) {
             $table->bigIncrements('la_id');
             $table->string('licanse_area_name');
-            $table->primary('la_id');
+
+            // $table->primary('la_id');
         });
     }
 

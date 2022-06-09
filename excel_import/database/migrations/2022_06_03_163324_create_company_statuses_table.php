@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('company_statuses', function (Blueprint $table) {
             $table->bigIncrements('cs_id');
             $table->string('status');
-            $table->primary('cs_id');
+
         });
     }
 

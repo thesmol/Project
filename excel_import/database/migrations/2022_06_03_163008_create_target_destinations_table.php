@@ -16,7 +16,8 @@ return new class extends Migration
         Schema::create('target_destinations', function (Blueprint $table) {
             $table->bigIncrements('td_id');
             $table->string('target');
-            $table->primary('td_id');
+
+            // $table->primary('td_id');
         });
     }
 

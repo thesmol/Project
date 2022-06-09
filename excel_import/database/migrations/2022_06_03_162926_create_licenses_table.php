@@ -19,18 +19,42 @@ return new class extends Migration
             $table->string('l_series');
             $table->integer('l_number');
             $table->string('l_type  ');
-            $table->foreign('company_id')->references('c_id')->on('companies');
-            $table->foreign('license_area_id')->references('la_id')->on('license_areas');
-            $table->foreign('license_status_id')->references('ls_id')->on('license_statuses');
-            $table->foreign('target_destination_id')->references('td_id')->on('tagret_destinations');
-            $table->foreign('kind_of_fossil_id')->references('kf_id')->on('lind_of_fossils');
-            $table->foreign('authorities_id')->references('a_id')->on('authorities');
+
+            $table->bigInteger('company_id');
+            $table->foreign('company_id')
+                ->references('c_id')->on('companies')
+                ->onDelete('cascade');
+
+            $table->bigInteger('license_area_id');
+            $table->foreign('license_area_id')
+                ->references('la_id')->on('license_areas')
+                ->onDelete('cascade');
+
+            $table->bigInteger('license_status_id');
+            $table->foreign('license_status_id')
+                ->references('ls_id')->on('license_statuses')
+                ->onDelete('cascade');
+
+            $table->bigInteger('target_destination_id');
+            $table->foreign('target_destination_id')
+                ->references('td_id')->on('target_destinations')
+                ->onDelete('cascade');
+
+            $table->bigInteger('kind_of_fossil_id');
+            $table->foreign('kind_of_fossil_id')
+                ->references('kf_id')->on('kind_of_fossils')
+                ->onDelete('cascade');
+
+            $table->bigInteger('authorities_id');
+            $table->foreign('authorities_id')
+                ->references('a_id')->on('authorities')
+                ->onDelete('cascade');
+
+
             $table->date('date_of_start');
             $table->date('date_of_end');
             $table->date('date_of_annulation')->nullable();
             $table->text('coords');
-
-            $table->primary('l_id');
         });
     }
 

@@ -16,9 +16,13 @@ return new class extends Migration
         Schema::create('fields', function (Blueprint $table) {
             $table->bigIncrements('f_id');
             $table->string('field_name');
-            $table->foreign('fe_id')->references('fe_id')->on('field_explorations');
+
+            $table->bigInteger('field_explorations_id');
+            $table->foreign('field_explorations_id')
+                ->references('fe_id')->on('field_explorations')
+                ->onDelete('cascade');
+
             $table->text('coords');
-            $table->primary('f_id');
         });
     }
 

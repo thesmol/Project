@@ -16,7 +16,8 @@ return new class extends Migration
         Schema::create('kind_of_fossils', function (Blueprint $table) {
             $table->bigIncrements('kf_id');
             $table->string('fossil');
-            $table->primary('kf_id');
+
+            // $table->primary('kf_id');
         });
     }
 
