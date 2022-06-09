@@ -15,7 +15,12 @@ return new class extends Migration
     {
         Schema::create('licenses', function (Blueprint $table) {
             $table->bigIncrements('l_id');
-            $table->integer('prev_l_id');
+
+            $table->bigInteger('prev_l_id') -> nullable();
+            $table->foreign('prev_l_id')
+                ->references('l_id')->on('licenses')
+                ->onDelete('cascade');
+
             $table->string('l_series');
             $table->integer('l_number');
             $table->string('l_type  ');
