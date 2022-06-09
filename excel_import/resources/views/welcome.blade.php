@@ -8,7 +8,7 @@
         <script type="module" scr="{{asset('js/app.js')}}" defer></script>
     </head>
 
-    <body class="">
-
+    <body>
+        <div id="app"></div>
     </body>
 </html>
