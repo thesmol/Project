@@ -23,8 +23,6 @@ return new class extends Migration
             $table->foreign('fields_id')
                 ->references('f_id')->on('fields')
                 ->onDelete('cascade');
-
-            // $table->primary(array('la_id','f_id'));
         });
     }
 

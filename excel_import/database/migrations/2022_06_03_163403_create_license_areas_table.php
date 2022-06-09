@@ -17,7 +17,7 @@ return new class extends Migration
             $table->bigIncrements('la_id');
             $table->string('licanse_area_name');
 
-            // $table->primary('la_id');
+
         });
     }
 
