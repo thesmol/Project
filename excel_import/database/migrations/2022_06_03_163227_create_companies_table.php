@@ -16,11 +16,17 @@ return new class extends Migration
         Schema::create('companies', function (Blueprint $table) {
             $table->bigIncrements('c_id');
             $table->string('company_name');
-            $table->integer('mc_id') -> nullable(); //управляющая компания
+
+            $table->bigInteger('mc_id') -> nullable(); //управляющая компания
+            $table->foreign('mc_id')
+                ->references('c_id')->on('companies')
+                ->onDelete('cascade');
+
             $table->bigInteger('company_status_id');
             $table->foreign('company_status_id')
                 ->references('cs_id')->on('company_statuses')
                 ->onDelete('cascade');
+
             $table->text('address');
             $table->integer('inn');
             $table->integer('code_OKPO');
